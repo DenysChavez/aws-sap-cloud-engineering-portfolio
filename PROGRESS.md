@@ -13,7 +13,7 @@ Weekly log of study hours, hands-on work, and evidence. Updated every Sunday.
 | Projects verified ✅ | 0 / 5 |
 | Certifications | 0 |
 | Badges | 2 (SAP Learning course-completion badges, June 2026) |
-| LinkedIn posts published | 0 |
+| LinkedIn posts published | 1 |
 
 ## Weekly log
 
