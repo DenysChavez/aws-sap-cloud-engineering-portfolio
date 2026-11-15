@@ -6,16 +6,30 @@ Weekly log of study hours, hands-on work, and evidence. Updated every Sunday.
 
 | Metric                   | Count                                                |
 | ------------------------ | ---------------------------------------------------- |
-| Weeks logged             | 1                                                    |
-| Total study hours        | 8                                                    |
-| AWS labs documented      | 1 (account security)                                 |
+| Weeks logged             | 2                                                    |
+| Total study hours        | 18                                                   |
+| AWS labs documented      | 2 (account security, IAM least privilege)           |
 | SAP BTP topics studied   | 2 (BTP Fundamentals Level 1 & 2)                     |
 | Projects verified ✅     | 0 / 5                                                |
 | Certifications           | 0                                                    |
 | Badges                   | 2 (SAP Learning course-completion badges, June 2026) |
-| LinkedIn posts published | 1                                                    |
+| LinkedIn posts published | 3                                                    |
 
 ## Weekly log
+
+### Week 2 — 2026-11-14
+
+- **Hours:** 10
+- **Focus:** IAM least privilege: policies, roles, permissions boundaries
+- **Done:**
+  - Customer-managed policy limited to `s3:ListBucket` + `s3:GetObject` on one lab bucket
+  - Role for a person (trusted by `denys-admin`) and role for a service (trusted by `ec2.amazonaws.com`, with instance profile), sharing the same permissions policy
+  - IAM Policy Simulator and real CLI calls as the assumed role agreed on all 5 tested actions (2 allowed, 3 implicit deny)
+  - Permissions boundary capped the test role to `s3:ListBucket`: `GetObject` denied even though the policy allows it (policy ∩ boundary)
+  - Lab bucket deleted after testing
+- **Evidence added:** [`technical-notes/iam-least-privilege-s3.md`](technical-notes/iam-least-privilege-s3.md), 4 policy files in [`technical-notes/policies/week-02/`](technical-notes/policies/week-02/), 13 redacted screenshots + 4 diagrams in [`technical-notes/images/week-02/`](technical-notes/images/week-02/)
+- **Blockers:** None
+- **Next week:** VPC and networking: public and private subnets, route tables
 
 ### Week 1 — 2026-11-08
 
