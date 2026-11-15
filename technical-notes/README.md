@@ -5,3 +5,4 @@ Short explainers (300–600 words) on concepts I've studied, written in my own w
 | Note | Topic | Date |
 |---|---|---|
 | [Securing a new AWS account](securing-a-new-aws-account.md) | AWS account security | Complete |
+| [Least privilege in IAM](iam-least-privilege-s3.md) | IAM policies, roles, permissions boundaries | Complete |
