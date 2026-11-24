@@ -6,16 +6,32 @@ Weekly log of study hours, hands-on work, and evidence. Updated every Sunday.
 
 | Metric                   | Count                                                |
 | ------------------------ | ---------------------------------------------------- |
-| Weeks logged             | 2                                                    |
-| Total study hours        | 18                                                   |
-| AWS labs documented      | 2 (account security, IAM least privilege)           |
+| Weeks logged             | 3                                                    |
+| Total study hours        | 26                                                   |
+| AWS labs documented      | 3 (account security, IAM least privilege, VPC)      |
 | SAP BTP topics studied   | 2 (BTP Fundamentals Level 1 & 2)                     |
 | Projects verified ✅     | 0 / 5                                                |
 | Certifications           | 0                                                    |
 | Badges                   | 2 (SAP Learning course-completion badges, June 2026) |
-| LinkedIn posts published | 3                                                    |
+| LinkedIn posts published | 5                                                    |
 
 ## Weekly log
+
+### Week 3 — 2026-11-21
+
+- **Hours:** 8
+- **Focus:** VPC networking: public and private subnets across two Availability Zones
+- **Done:**
+  - Planned the IP ranges first: `lab-vpc` 10.0.0.0/16 with two public (10.0.1.0/24, 10.0.2.0/24) and two private (10.0.11.0/24, 10.0.12.0/24) subnets in us-east-1a and us-east-1b
+  - Built the whole network from the AWS CLI, saving resource IDs to an `ids.env` file
+  - Internet gateway `lab-igw`; `lab-public-rt` routes `0.0.0.0/0` to it, `lab-private-rt` is local only; the main route table is local only, so a new subnet is private by default
+  - Security groups: `lab-web-sg` (HTTP 80 from anywhere, no SSH) and `lab-app-sg` (TCP 8080 only from `lab-web-sg`)
+  - Network ACL `lab-private-nacl` on both private subnets: allows only the VPC CIDR, inbound and outbound
+  - Verified with the CLI route check and the VPC resource map; no NAT gateway and no network interfaces in the VPC ($0)
+  - Architecture diagram in draw.io
+- **Evidence added:** [`technical-notes/vpc-public-private-subnets.md`](technical-notes/vpc-public-private-subnets.md), 5 redacted screenshots in [`technical-notes/images/week-03/`](technical-notes/images/week-03/), diagram [`architecture-diagrams/week-03-lab-vpc.svg`](architecture-diagrams/week-03-lab-vpc.svg) (source `.drawio` alongside)
+- **Blockers:** None
+- **Next week:** EC2 and Linux: launch a web server into `lab-public-a` with `lab-web-sg`
 
 ### Week 2 — 2026-11-14
 

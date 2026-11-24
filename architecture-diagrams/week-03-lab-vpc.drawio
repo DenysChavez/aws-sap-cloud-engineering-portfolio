@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-11-21T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="week03" name="Week 03 - Lab VPC">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="1020" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="WEEK 03  /  AWS NETWORK FOUNDATION" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#233044;fontSize=24;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="55" y="20" width="800" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="VPC topology  •  us-east-1  •  2 Availability Zones  •  no NAT gateway, no instances yet" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#64748B;fontSize=13;align=left;" vertex="1" parent="1">
+          <mxGeometry x="55" y="57" width="860" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="region" value="Region  /  us-east-1" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_region;strokeColor=#147EBA;fillColor=#F9FCFF;fontColor=#147EBA;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="55" y="110" width="1150" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" value="VPC  /  lab-vpc  /  10.0.0.0/16" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=#FCFAFF;fontColor=#6838AB;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="90" y="157" width="1075" height="556" as="geometry" />
+        </mxCell>
+        <mxCell id="aza" value="Availability Zone  /  us-east-1a" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_availability_zone;strokeColor=#64748B;fillColor=#FFFFFF;fontColor=#475569;dashed=1;dashPattern=7 5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="130" y="216" width="480" height="465" as="geometry" />
+        </mxCell>
+        <mxCell id="publica" value="Public subnet  /  lab-public-a  /  10.0.1.0/24" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#248814;fillColor=#EFF9E9;fontColor=#248814;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="155" y="267" width="430" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="publicartlabel" value="Route table: lab-public-rt" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#256B22;fontSize=12;align=left;" vertex="1" parent="1">
+          <mxGeometry x="185" y="300" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sgpublica" value="&lt;b&gt;lab-web-sg&lt;/b&gt;&lt;br&gt;HTTP 80 from 0.0.0.0/0  •  no SSH" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 4;strokeWidth=1.6;strokeColor=#DD3522;fillColor=#FFFFFF;opacity=85;fontColor=#B42318;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="184" y="330" width="372" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="privatea" value="Private subnet  /  lab-private-a  /  10.0.11.0/24" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#147EBA;fillColor=#EAF5FC;fontColor=#147EBA;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="155" y="455" width="430" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="privateartlabel" value="Route table: lab-private-rt" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#146E9F;fontSize=12;align=left;" vertex="1" parent="1">
+          <mxGeometry x="185" y="488" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sgprivatea" value="&lt;b&gt;lab-app-sg&lt;/b&gt;&lt;br&gt;TCP 8080 only from lab-web-sg" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 4;strokeWidth=1.6;strokeColor=#DD3522;fillColor=#FFFFFF;opacity=85;fontColor=#B42318;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="184" y="518" width="372" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="naclA" value="NACL: lab-private-nacl" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#8C4FFF;fillColor=#F3EEFF;fontColor=#6838AB;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="184" y="600" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="azb" value="Availability Zone  /  us-east-1b" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_availability_zone;strokeColor=#64748B;fillColor=#FFFFFF;fontColor=#475569;dashed=1;dashPattern=7 5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="216" width="480" height="465" as="geometry" />
+        </mxCell>
+        <mxCell id="publicb" value="Public subnet  /  lab-public-b  /  10.0.2.0/24" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#248814;fillColor=#EFF9E9;fontColor=#248814;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="665" y="267" width="430" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="publicbrtlabel" value="Route table: lab-public-rt" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#256B22;fontSize=12;align=left;" vertex="1" parent="1">
+          <mxGeometry x="695" y="300" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sgpublicb" value="&lt;b&gt;lab-web-sg&lt;/b&gt;&lt;br&gt;HTTP 80 from 0.0.0.0/0  •  no SSH" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 4;strokeWidth=1.6;strokeColor=#DD3522;fillColor=#FFFFFF;opacity=85;fontColor=#B42318;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="694" y="330" width="372" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="privateb" value="Private subnet  /  lab-private-b  /  10.0.12.0/24" style="shape=mxgraph.aws4.group;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingTop=11;spacingLeft=30;fontFamily=Arial;fontSize=15;fontStyle=1;rounded=1;arcSize=8;container=1;collapsible=0;recursiveResize=0;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#147EBA;fillColor=#EAF5FC;fontColor=#147EBA;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="665" y="455" width="430" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="privatebrtlabel" value="Route table: lab-private-rt" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#146E9F;fontSize=12;align=left;" vertex="1" parent="1">
+          <mxGeometry x="695" y="488" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sgprivateb" value="&lt;b&gt;lab-app-sg&lt;/b&gt;&lt;br&gt;TCP 8080 only from lab-web-sg" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 4;strokeWidth=1.6;strokeColor=#DD3522;fillColor=#FFFFFF;opacity=85;fontColor=#B42318;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="694" y="518" width="372" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="naclB" value="NACL: lab-private-nacl" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#8C4FFF;fillColor=#F3EEFF;fontColor=#6838AB;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="694" y="600" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="internet" value="Internet" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#A8B4C2;fillColor=#F3F6FA;fontColor=#334155;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="994" y="52" width="130" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="igw" value="lab-igw" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.internet_gateway;html=1;whiteSpace=wrap;strokeColor=#FFFFFF;fillColor=#8C4FFF;fontColor=#573599;fontStyle=1;fontSize=13;labelPosition=right;verticalLabelPosition=middle;verticalAlign=middle;align=left;spacingLeft=6;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="133" width="48" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="igwInternet" value="" style="startArrow=block;startFill=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="igw" target="internet">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="ROUTING" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="55" y="770" width="190" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="publicroute" value="&lt;b&gt;lab-public-rt&lt;/b&gt;&lt;br&gt;10.0.0.0/16 → local  •  0.0.0.0/0 → lab-igw&lt;br&gt;Subnets: lab-public-a, lab-public-b" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#C9E5BA;fillColor=#EFF9E9;fontColor=#256B22;fontSize=13;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="55" y="800" width="370" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="privateroute" value="&lt;b&gt;lab-private-rt&lt;/b&gt;&lt;br&gt;10.0.0.0/16 → local only&lt;br&gt;Subnets: lab-private-a, lab-private-b" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BEDCED;fillColor=#EAF5FC;fontColor=#146E9F;fontSize=13;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="445" y="800" width="370" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mainroute" value="&lt;b&gt;lab-main-rt-unused&lt;/b&gt; (main route table)&lt;br&gt;10.0.0.0/16 → local only&lt;br&gt;Subnets: none (safe default for new subnets)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#CBD5E1;fillColor=#F1F5F9;fontColor=#475569;fontSize=13;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="835" y="800" width="370" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="filterlegend" value="FILTERING" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#475569;fontSize=13;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="55" y="885" width="190" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sglegend" value="&lt;b&gt;Security groups&lt;/b&gt; (stateful, per network interface): lab-web-sg allows HTTP 80 from anywhere, no SSH  •  lab-app-sg allows TCP 8080 only from members of lab-web-sg" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 4;strokeColor=#DD3522;fillColor=#FFFFFF;fontColor=#B42318;fontSize=13;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="55" y="915" width="1150" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="nacllegend" value="&lt;b&gt;lab-private-nacl&lt;/b&gt; (stateless, per subnet): inbound and outbound allow only 10.0.0.0/16, everything else denied  •  associated with lab-private-a and lab-private-b" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#8C4FFF;fillColor=#F3EEFF;fontColor=#6838AB;fontSize=13;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="55" y="961" width="1150" height="36" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

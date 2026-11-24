@@ -4,4 +4,4 @@ Diagram sources (`.drawio`) and exports (`.svg`) made with [diagrams.net](https:
 
 | Diagram | Project |
 |---|---|
-| _None yet_ | |
+| [Week 3: lab-vpc](week-03-lab-vpc.svg) ([source](week-03-lab-vpc.drawio)) | Week 3 lab, base network for Week 4 and Project 01 |
